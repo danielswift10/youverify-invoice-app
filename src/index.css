@@ -1,4 +1,4 @@
-@import url("https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro");
+@import url("https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro?styles=82961,82965,82963,82959");
 
 @import "tailwindcss";
 
@@ -28,18 +28,20 @@
   --color-grey-400: #666f77;
   --color-grey-500: #697598;
   --color-grey-600: #373b47;
-  --color-grey-700: #373b4733;
+  --color-grey-700: #eef2fe;
+  --color-grey-800: #373b4733;
 
   --color-success-50: #e6fff0;
   --color-success-100: #b6fdd3;
   --color-success-200: #12904333;
+  --color-success-300: #129043;
 
   --color-danger-50: #fff4f5;
   --color-danger-100: #ff5663;
   --color-danger-200: #ff566333;
 
-  --color-pink-100: #fcddec;
-  --color-pink-200: #ffb7bd;
+  --color-pink-50: #fcddec;
+  --color-pink-100: #ffb7bd;
 
   --color-warning-50: #fff8eb;
   --color-warning-100: #f8e39b;
@@ -61,7 +63,7 @@ body {
   background: var(--color-background);
   color: var(--color-black);
   font-family: var(--font-neue-haas-grotesk);
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
   line-height: 1.5;
   font-size: 1.6rem;
@@ -71,39 +73,6 @@ body {
   padding: 0;
 }
 
-/* h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */

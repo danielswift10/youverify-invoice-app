@@ -1,6 +1,6 @@
 import type { IconProps } from "./SettingsIcon";
 
-export default function ChevronUpIcon({ size = "small" }: IconProps) {
+export default function ChevronDownIcon({ size = "small" }: IconProps) {
   return size === "small" ? (
     <svg
       width="9"
