@@ -3,6 +3,9 @@ import invoice_snapshot from "../../../../assets/images/invoice.png";
 import { cn, formatAmount } from "../../../../utils";
 import type { Invoices } from "../../types";
 import { setModalType } from "../../../../store";
+import Search from "../../../../components/Search";
+import CalendarIcon from "../../../../assets/icons/CalendarIcon";
+import ChevronDownIcon from "../../../../assets/icons/ChevronDownIcon";
 
 const statusPill: Record<Invoices["status"], string> = {
   PAID: "bg-success-50 border-success-200 text-success-300",
@@ -15,7 +18,17 @@ const statusPill: Record<Invoices["status"], string> = {
 export default function AllInvoicesTable() {
   return (
     <div className="bg-white rounded-[4rem] p-[3.2rem] space-y-[2.4rem]">
-      <div></div>
+      <div className="grid grid-cols-[1fr_.6fr_.4fr] items-center gap-[1.6rem] w-[60%]">
+        <Search placeholder="Search Invoice with name or Transaction ID" />
+        <button className="flex items-center justify-between px-[2rem] py-[1.6rem] border border-grey-200 rounded-[3.2rem] text-[1.2rem] text-grey-600 hover:bg-grey-50 transition-colors">
+          <span>SORT BY DATE</span>
+          <CalendarIcon />
+        </button>
+        <button className="flex items-center justify-between px-[2rem] py-[1.6rem] border border-grey-200 rounded-[3.2rem] text-[1.2rem] text-grey-600 hover:bg-grey-50 transition-colors">
+          <span>STATUS</span>
+          <ChevronDownIcon size="large" />
+        </button>
+      </div>
       <table className="table-auto w-full">
         <thead>
           <tr>
@@ -50,12 +63,12 @@ export default function AllInvoicesTable() {
               {group.invoices.map((invoice, invoiceIndex) => (
                 <tr
                   key={invoiceIndex}
-                  className="hover:bg-grey-50 transition-colors cursor-pointer"
+                  className="hover:bg-grey-50 transition-colors"
                   onClick={() => setModalType("INVOICE_MODAL")}
                 >
                   <td className="px-[3.2rem] py-[2.4rem]">
                     <div className="flex items-center gap-[1.6rem]">
-                      <figure className="overflow-hidden border">
+                      <figure className="overflow-hidden">
                         <img
                           src={invoice_snapshot}
                           alt="invoice_snapshot"

@@ -6,7 +6,6 @@ export default function Sidebar() {
    <div className="px-[2.4rem] bg-white py-[4rem] space-y-[4rem]">
     <Logo/>
     <SidebarItems/>
-
    </div>
   )
 }

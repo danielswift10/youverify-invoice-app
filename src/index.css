@@ -12,6 +12,7 @@
 
 @theme inline {
   /* Colors */
+  --font-neue-haas-grotesk: var(--font-neue-haas-grotesk);
   --color-background: #f5f6fa;
   --color-white: #ffffff;
   --color-black: #1f1f23;
@@ -68,9 +69,14 @@ body {
   line-height: 1.5;
   font-size: 1.6rem;
   min-width: 320px;
+  letter-spacing: 10%;
   min-height: 100dvh;
   margin: 0;
   padding: 0;
+}
+
+button{
+  cursor: pointer;
 }
 
 .no-scrollbar::-webkit-scrollbar {

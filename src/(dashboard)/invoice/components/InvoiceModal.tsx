@@ -1,4 +1,3 @@
-"use client";
 import Button from "../../../components/Button";
 import Modal from "../../../components/Modal";
 import InvoiceReminders from "./InvoiceReminders";
@@ -6,8 +5,9 @@ import enterpriseLogo from "../../../assets/images/enterprise-logo.png";
 import { invoiceActivityData, invoiceItemsData } from "../../../utils/data";
 import { cn, formatAmount } from "../../../utils";
 import InvoiceActivity from "./InvoiceActivity";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Menu from "../../../components/Menu";
+import useOutsideClick from "../../../hooks/useOutsideClick";
 
 interface InvoiceModalProps {
   isOpen: boolean;
@@ -20,20 +20,10 @@ export default function InvoiceModal({ isOpen }: InvoiceModalProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const actionContainerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        isMenuOpen &&
-        actionContainerRef.current &&
-        !actionContainerRef.current.contains(event.target as Node)
-      ) {
-        setIsMenuOpen(false);
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [isMenuOpen]);
+  useOutsideClick({
+    ref: actionContainerRef as React.RefObject<HTMLElement>,
+    callbackHandler: () => setIsMenuOpen(false),
+  });
 
   const handleToggle = () => {
     setIsMenuOpen((prevMenuOpen) => !prevMenuOpen);

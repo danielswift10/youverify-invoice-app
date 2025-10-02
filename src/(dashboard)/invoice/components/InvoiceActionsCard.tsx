@@ -15,7 +15,7 @@ export const InvoiceActionsCard = ({
   return (
     <article
       onClick={onClick}
-      className="rounded-[2.4rem] bg-white py-[3.2rem] px-16 space-y-[1.6rem] cursor-pointer group hover:bg-primary-100"
+      className="rounded-[2.4rem] bg-white py-[3.2rem] px-16 space-y-[1.6rem] group hover:bg-primary-100"
     >
       {icon}
       <hgroup>

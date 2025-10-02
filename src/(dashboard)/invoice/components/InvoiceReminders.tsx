@@ -29,7 +29,7 @@ export default function InvoiceReminders() {
             key={index}
             onClick={() => toggleReminder(index)}
             className={cn(
-              "flex items-center gap-4 hover:bg-grey-50 border border-grey-100 px-[1.6rem] py-[1.2rem] rounded-[2.4rem] transition-all cursor-pointer duration-200 ",
+              "flex items-center gap-4 hover:bg-grey-50 border border-grey-100 px-[1.6rem] py-[1.2rem] rounded-[2.4rem] transition-all duration-200 ",
               {
                 "border-none bg-success-50 text-grey-600 hover:bg-success-50":
                   reminder.completed,

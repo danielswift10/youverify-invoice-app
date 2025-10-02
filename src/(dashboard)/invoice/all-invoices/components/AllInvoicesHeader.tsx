@@ -8,7 +8,7 @@ export default function AllInvoicesHeader() {
   return (
     <div className="flex items-start justify-between">
       <div className="flex items-start gap-[1.6rem]">
-        <button onClick={() => navigate("/invoice")} className="cursor-pointer">
+        <button onClick={() => navigate("/invoice")}>
           <ArrowLeftIcon />
         </button>
         <hgroup>

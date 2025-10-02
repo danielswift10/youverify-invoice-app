@@ -1,5 +1,10 @@
 import type { ISideBarData } from "../types";
-import { Link } from "react-router-dom";
+import {
+  Link,
+  matchPath,
+  useLocation,
+  useResolvedPath,
+} from "react-router-dom";
 import { cn } from "../../utils";
 
 export default function SidebarItem({
@@ -7,8 +12,15 @@ export default function SidebarItem({
   route,
   title,
 }: ISideBarData) {
-  const pathname = location.pathname;
-  const isActive = pathname === route;
+  const location = useLocation();
+  const resolved = useResolvedPath(route);
+
+  const endMatch = resolved.pathname === "/";
+
+  const isActive = Boolean(
+    matchPath({ path: resolved.pathname, end: endMatch }, location.pathname)
+  );
+
   return (
     <li>
       <Link

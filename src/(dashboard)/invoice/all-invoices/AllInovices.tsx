@@ -7,7 +7,7 @@ import { $modalType } from "../../../store";
 export default function AllInovices() {
   const modalType = useStore($modalType);
   return (
-    <div className="mt-52">
+    <div className="mt-52 space-y-16">
       <AllInvoicesHeader />
       <AllInvoicesTable />
       <InvoiceModal isOpen={modalType === "INVOICE_MODAL"} />

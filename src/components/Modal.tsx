@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useRef } from "react";
 import { cn } from "../utils";
 import { setModalType } from "../store";
@@ -41,7 +39,7 @@ export default function Modal({ className, children, isOpen }: ModalProps) {
         <div className="w-full flex justify-end">
           <button
             onClick={() => setModalType("CLOSE_MODAL")}
-            className="w-24 h-24 bg-white rounded-full flex items-center justify-center cursor-pointer"
+            className="w-24 h-24 bg-white rounded-full flex items-center justify-center"
           >
             <CloseIcon />
           </button>

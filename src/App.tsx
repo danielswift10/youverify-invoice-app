@@ -1,14 +1,16 @@
 import { Route, Routes } from "react-router-dom";
-import { Login, SignUp } from "./(auth)";
+import { SignIn, SignUp } from "./(auth)";
 import { routesData } from "./utils/data";
 import DashboardLayout from "./(dashboard)/layout";
+import ProtectedRoute from "./components/ProtectedRoute";
+import PublicRoute from "./components/PublicRoute";
 
 export default function App() {
   return (
     <Routes>
       {/* Authentication */}
-      <Route path="sign-up" element={<SignUp />} />
-      <Route path="login" element={<Login />} />
+      <Route path="sign-up" element={<PublicRoute><SignUp /></PublicRoute>} />
+      <Route path="sign-in" element={<PublicRoute><SignIn /></PublicRoute>} />
 
       {/* Dashboard Routes */}
       {routesData.map((route, index) => {
@@ -18,9 +20,11 @@ export default function App() {
             key={index}
             path={route.path}
             element={
-              <DashboardLayout>
-                <Component />
-              </DashboardLayout>
+              <ProtectedRoute>
+                <DashboardLayout>
+                  <Component />
+                </DashboardLayout>
+              </ProtectedRoute>
             }
           >
             {route.children?.map((child, childIndex) => {

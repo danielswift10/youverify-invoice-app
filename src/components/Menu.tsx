@@ -16,7 +16,7 @@ function MenuItem({ onClick, children, className }: MenuItemProps) {
     <button
       onClick={onClick}
       className={cn(
-        "uppercase py-[1.6rem] px-[1.2rem] text-left text-grey-500 text-[1.4rem] font-semibold cursor-pointer hover:bg-grey-50 transition-all duration-300 rounded-[1.4rem]",
+        "uppercase py-[1.6rem] px-[1.2rem] text-left text-grey-500 text-[1.4rem] font-semibold hover:bg-grey-50 transition-all duration-300 rounded-[1.4rem]",
         className
       )}
     >
