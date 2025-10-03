@@ -115,6 +115,16 @@ App runs on `http://localhost:5173/`
 
 ---
 
+## 📸 Screenshots
+
+### Dashboard (Invoice Overview)
+
+![Invoice Dashboard Sign Up](public/screenshots/youverify-invoice-sign-up.png)
+![Invoice Dashboard Sign In](public/screenshots/youverify-invoice-sign-in.png)
+![Invoice Dashboard](public/screenshots/youverify-invoice-dashboard.png)
+
+---
+
 ## 📌 Assumptions
 
 * Firebase is used for auth but can be swapped.
