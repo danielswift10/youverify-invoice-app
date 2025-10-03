@@ -18,8 +18,8 @@ export const InvoiceOverviewCard = ({
   status,
 }: IInvoiceOverviewCard) => {
   return (
-    <article className="bg-white rounded-[2.4rem]  flex flex-col md:items-center justify-center py-[2rem] xl:py-[3.2rem] px-8 xl:px-16 space-y-[1.6rem]">
-      <div className="">
+    <article className="bg-white rounded-[2.4rem]  flex flex-col md:items-start justify-center py-[2rem] xl:py-[3.2rem] px-8 xl:px-16 space-y-[1.6rem]">
+      <div>
         <CategoryIcon />
         <div className="space-y-[.8rem]">
           <div className="flex items-center gap-[.8rem]">
