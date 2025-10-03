@@ -36,7 +36,7 @@ export default function SignInForm() {
   const isLoading = isSigningIn || isSigningInWithGoogle;
 
   return (
-    <div className="flex flex-col gap-[3rem] w-[44rem]">
+    <>
       <hgroup>
         <h1 className="text-[3rem] tracking-wide font-semibold">Sign In</h1>
         <p className="tracking-wider">
@@ -116,6 +116,6 @@ export default function SignInForm() {
           </Button>
         </p>
       </form>
-    </div>
+    </>
   );
 }

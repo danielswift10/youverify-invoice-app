@@ -17,29 +17,31 @@ export const InvoiceOverviewCard = ({
   status,
 }: IInvoiceOverviewCard) => {
   return (
-    <article className="bg-white rounded-[2.4rem] py-[3.2rem] px-16 space-y-[1.6rem]">
-      <CategoryIcon />
+    <article className="bg-white rounded-[2.4rem]  flex flex-col md:items-center justify-center py-[2rem] xl:py-[3.2rem] px-8 xl:px-16 space-y-[1.6rem]">
+     <div className="">
+     <CategoryIcon />
       <div className="space-y-[.8rem]">
         <div className="flex items-center gap-[.8rem]">
-          <h3 className="text-grey-500 text-[1.2rem] font-semibold leading-8 uppercase">
+          <h3 className="text-grey-500 text-[1.2rem] font-semibold xl:leading-8 uppercase">
             {title}
           </h3>
           <span
             className={cn(
-              "text-grey-600 font-semibold h-[4.1rem] flex items-center justify-center px-[1.6rem] rounded-[2.4rem]",
+              "text-grey-600 font-semibold h-[4.1rem] text-[1.4rem] xl:text-[1.6rem] flex items-center justify-center px-[1.6rem] rounded-[2.4rem]",
               statusColors[status]
             )}
           >
             {String(formatAmount(count).padStart(2, "0"))}
           </span>
         </div>
-        <div className="text-[2.8rem] text-black font-semibold">
+        <div className="text-[2.2rem] md:text-[2.4rem] xl:text-[2.8rem] text-black font-semibold">
           ${formatCurrency(amount).int}.
           <span className="text-[1.4rem] text-grey-500">
             {formatCurrency(amount).cents}
           </span>
         </div>
       </div>
+     </div>
     </article>
   );
 };

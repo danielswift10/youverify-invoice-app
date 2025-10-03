@@ -30,7 +30,7 @@ function Button({
 }: ButtonProps) {
   const variations = {
     primary:
-      "text-white bg-primary-100 hover:bg-primary-200 disabled:bg-primary-200 disabled:cursor-not-allowed rounded-[4rem]",
+      "text-white bg-primary-100 hover:bg-primary-400 disabled:bg-primary-400 disabled:cursor-not-allowed rounded-[4rem]",
     secondary:
       "border border-grey-100 text-primary-100  bg-white rounded-[4rem]",
     tertiary: "border border-grey-100 text-grey-500  bg-white rounded-[4rem]",
@@ -39,7 +39,7 @@ function Button({
 
   const sizes = {
     small: "text-[1.4rem] font-semibold leading-3 py-2 px-4 ",
-    medium: "text-[1.6rem] font-semibold px-[6.2rem] py-[2.4rem]",
+    medium: "text-[1.6rem] font-semibold px-0 py-7 tracking-widest md:px-[6.2rem] md:py-[2.4rem]",
   };
 
   if (href)

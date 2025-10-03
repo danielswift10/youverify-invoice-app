@@ -1,12 +1,15 @@
 import { useState } from "react";
-import { invoiceRemindersData } from "../../../utils/data";
-import type { InvoiceReminders } from "../types";
+import type { InvoiceReminder, InvoiceReminders, InvoiceReminderSettings } from "../types";
 import CheckMarkIcon from "../../../assets/icons/CheckMarkIcon";
 import { cn } from "../../../utils";
 
-export default function InvoiceReminders() {
+interface InvoiceRemindersProps {
+  data: InvoiceReminderSettings
+}
+export default function InvoiceReminders({data} : InvoiceRemindersProps) {
+  const {reminders: remindersData} = data
   const [reminders, setReminders] =
-    useState<InvoiceReminders[]>(invoiceRemindersData);
+    useState<InvoiceReminder[]>(remindersData);
 
   const toggleReminder = (id: number) => {
     setReminders((prevReminders) =>
@@ -19,11 +22,11 @@ export default function InvoiceReminders() {
   };
 
   return (
-    <div className="border border-grey-100 rounded-[2.4rem] p-[2.4rem] flex items-center gap-[2.4rem] w-max">
+    <div className="border border-grey-100 rounded-[1.6rem] md:rounded-[2.4rem] py-[1.5rem] px-[1rem] md:p-[2.4rem] flex flex-col xl:flex-row items-start xl:items-center gap-[1.6rem] md:gap-[2.4rem] w-full xl:w-max">
       <span className="text-[1.2rem] font-semibold text-grey-400">
         REMINDERS
       </span>
-      <div className="flex items-center gap-[1.2rem]">
+      <div className="flex items-center gap-[1.2rem] flex-wrap w-full">
         {reminders.map((reminder, index) => (
           <button
             key={index}
@@ -36,7 +39,7 @@ export default function InvoiceReminders() {
               }
             )}
           >
-            <span className="text-[1.4rem] font-medium">{reminder.text}</span>
+            <span className="text-[1.2rem] md:text-[1.4rem] max-w-[14rem] font-medium">{reminder.text}</span>
             {reminder.completed && <CheckMarkIcon />}
           </button>
         ))}

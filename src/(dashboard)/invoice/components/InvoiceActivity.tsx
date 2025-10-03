@@ -1,15 +1,29 @@
 import avatar from "../../../assets/images/avatar.png";
 import { formatAmount } from "../../../utils";
 import type { InvoiceActivities } from "../types";
+import { InvoiceActivitySkeleton } from "./InvoiceActivitySkeleton";
 
 interface InvoiceActivityProp {
   data: InvoiceActivities[];
+  loading?: boolean;
   showVerticalLine?: boolean;
 }
 export default function InvoiceActivity({
   data,
+  loading,
   showVerticalLine = false,
 }: InvoiceActivityProp) {
+  if (loading) {
+    return <InvoiceActivitySkeleton />;
+  }
+
+  if (!data || data.length === 0) {
+    return (
+      <div className="text-center py-[4rem] text-grey-500">
+        No recent activities
+      </div>
+    );
+  }
   return (
     <div className="space-y-[2.4rem]">
       {data?.map((activity, index) => (
@@ -24,11 +38,10 @@ export default function InvoiceActivity({
             <img src={avatar} alt="avatar" className="size-full object-cover" />
           </figure>
           <div className="space-y-[.4rem] w-full">
-            <h3 className="text-[1.8rem] font-semibold text-[#000000]">
-              {/* {activity.type === "created" && "Invoice Creation"} */}
+            <h3 className="md:text-[1.8rem] font-semibold text-[#000000]">
               {activity.title ?? activity.user ?? ""}
             </h3>
-            <p className="text-[1.4rem] text-grey-500">{activity.timestamp}</p>
+            <p className="text-[1.2rem] md:text-[1.4rem] text-grey-500">{activity.timestamp}</p>
             <div className="bg-grey-50 rounded-[1.6rem] p-[1.6rem]">
               {activity.type === "created" && (
                 <p className="text-[1.4rem] text-grey-500">

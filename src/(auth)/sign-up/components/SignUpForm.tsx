@@ -23,7 +23,7 @@ export default function SignUpForm() {
     }
   };
   return (
-    <div className="flex flex-col gap-[3rem] w-[44rem]">
+    <>
       <hgroup>
         <h1 className="text-[3rem] font-semibold">Sign Up</h1>
         <p>Please enter your details.</p>
@@ -32,7 +32,7 @@ export default function SignUpForm() {
         className="grid grid-cols-2 gap-[2rem]"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <div className="col-span-1">
+        <div className="col-span-2 sm:col-span-1">
           <Input
             name="firstName"
             label="First Name"
@@ -46,7 +46,7 @@ export default function SignUpForm() {
             errors={errors?.firstName}
           />
         </div>
-        <div className="col-span-1">
+        <div className="col-span-2 sm:col-span-1">
           <Input
             name="lastName"
             label="Last Name"
@@ -118,6 +118,6 @@ export default function SignUpForm() {
           </p>
         </div>
       </form>
-    </div>
+    </>
   );
 }

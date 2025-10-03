@@ -39,14 +39,14 @@ export default function Modal({ className, children, isOpen }: ModalProps) {
         <div className="w-full flex justify-end">
           <button
             onClick={() => setModalType("CLOSE_MODAL")}
-            className="w-24 h-24 bg-white rounded-full flex items-center justify-center"
+            className="w-12 lg:w-24 h-12 md:h-24 bg-white rounded-full flex items-center justify-center"
           >
             <CloseIcon />
           </button>
         </div>
         <section
           className={cn(
-            "bg-white translate-x-full p-16 min-w-[38rem] sm:w-[59.4rem] lg:w-[133.4rem] rounded-[4rem] transition-all ease-linear duration-300 delay-100 mx-auto",
+            "bg-white translate-x-full p-6 lg:p-16 w-full xl:w-[133.4rem] rounded-[3rem] lg:rounded-[4rem] transition-all ease-linear duration-300 delay-100 mx-auto",
             {
               "translate-x-0": isOpen,
             },

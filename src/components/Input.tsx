@@ -45,7 +45,7 @@ export default function Input({
   return (
     <div className="w-full flex flex-col gap-6">
       {label && (
-        <label htmlFor={name} className="font-medium text-black leading-3">
+        <label htmlFor={name} className="font-medium tracking-wider text-black leading-3">
           {label}
         </label>
       )}
@@ -53,7 +53,7 @@ export default function Input({
       <div className="relative left-0">
         <input
           className={cn(
-            "w-full rounded-[2rem] border border-[#dfe2e7] bg-white shadow-base outline-grey-200 outline-offset-2 py-[1.6rem] px-[2rem] text-black placeholder:text-[1.4rem] placeholder:text-grey-400",
+            "w-full rounded-[2rem] border border-[#dfe2e7] bg-white shadow-base tracking-wider outline-grey-200 outline-offset-2 py-[1.6rem] px-[2rem] text-black placeholder:text-[1.4rem] placeholder:text-grey-400",
             className
           )}
           type={inputType}

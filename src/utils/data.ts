@@ -17,7 +17,7 @@ import type {
   InvoiceActivities,
   InvoiceGroup,
   InvoiceItem,
-  InvoiceReminders,
+  InvoiceReminder,
 } from "../(dashboard)/invoice/types";
 import AllInovices from "../(dashboard)/invoice/all-invoices/AllInovices";
 import InvoiceInterface from "../(dashboard)/invoice/components/InvoiceInterface";
@@ -135,7 +135,7 @@ export const invoiceOverviewStatsData: IInvoiceOverviewCard[] = [
   },
 ];
 
-export const invoiceGroups: InvoiceGroup[] = [
+export const recentInvoicesData: InvoiceGroup[] = [
   {
     date: "TODAY - 27TH NOVEMBER, 2022",
     invoices: [
@@ -178,7 +178,7 @@ export const invoiceGroups: InvoiceGroup[] = [
   },
 ];
 
-export const invoiceActivitiesData: InvoiceActivities[] = [
+export const recentInvoiceActivitiesData: InvoiceActivities[] = [
   {
     title: "Invoice Creation",
     type: "created",
@@ -209,13 +209,13 @@ export const invoiceActivitiesData: InvoiceActivities[] = [
   },
 ];
 
-export const invoiceRemindersData: InvoiceReminders[] = [
-  { text: "14 days before due date", completed: true },
-  { text: "7 days before due date", completed: true },
-  { text: "3 days before due date", completed: false },
-  { text: "24 hrs before due date", completed: false },
-  { text: "On the due date", completed: false },
-];
+// export const invoiceRemindersData: InvoiceReminders[] = [
+//   { text: "14 days before due date", completed: true },
+//   { text: "7 days before due date", completed: true },
+//   { text: "3 days before due date", completed: false },
+//   { text: "24 hrs before due date", completed: false },
+//   { text: "On the due date", completed: false },
+// ];
 
 export const invoiceItemsData: InvoiceItem[] = [
   {
@@ -289,7 +289,7 @@ export const allInvoicesData: InvoiceGroup[] = [
     date: "TODAY - 27TH MARCH, 2023",
     invoices: [
       {
-        invoiceId: "Fecd7dsa9a57.....",
+        invoiceId: "INV-001-2023",
         dateCreated: "23 Sept, 2023",
         time: "18:03:23",
         customer: "Olaniyi Oluwadare Johnson",
@@ -297,19 +297,19 @@ export const allInvoicesData: InvoiceGroup[] = [
         status: "PAID",
       },
       {
-        invoiceId: "Fecd7dsa9a57.....",
+        invoiceId: "INV-002-2023",
         dateCreated: "23 Sept, 2023",
-        time: "18:03:23",
-        customer: "Olaniyi Oluwadare Johnson",
-        amount: 1311750.12,
-        status: "PAID",
+        time: "17:45:10",
+        customer: "Adebayo Michael Thompson",
+        amount: 856420.50,
+        status: "PENDING PAYMENT",
       },
       {
-        invoiceId: "Fecd7dsa9a57.....",
+        invoiceId: "INV-003-2023",
         dateCreated: "23 Sept, 2023",
-        time: "18:03:23",
-        customer: "Olaniyi Oluwadare Johnson",
-        amount: 1311750.12,
+        time: "16:20:05",
+        customer: "Chidinma Grace Okafor",
+        amount: 2145600.00,
         status: "PAID",
       },
     ],
@@ -318,61 +318,94 @@ export const allInvoicesData: InvoiceGroup[] = [
     date: "8TH DECEMBER, 2022",
     invoices: [
       {
-        invoiceId: "Fecd7dsa9a57.....",
-        dateCreated: "23 Sept, 2023",
-        time: "18:03:23",
-        customer: "Olaniyi Oluwadare Johnson",
-        amount: 1311750.12,
+        invoiceId: "INV-004-2022",
+        dateCreated: "8 Dec, 2022",
+        time: "14:30:45",
+        customer: "Babatunde Samuel Adeleke",
+        amount: 654320.75,
+        status: "OVERDUE",
+      },
+      {
+        invoiceId: "INV-005-2022",
+        dateCreated: "8 Dec, 2022",
+        time: "13:15:22",
+        customer: "Funmilayo Janet Ajayi",
+        amount: 1987500.00,
         status: "PAID",
       },
       {
-        invoiceId: "Fecd7dsa9a57.....",
-        dateCreated: "23 Sept, 2023",
-        time: "18:03:23",
-        customer: "Olaniyi Oluwadare Johnson",
-        amount: 1311750.12,
+        invoiceId: "INV-006-2022",
+        dateCreated: "8 Dec, 2022",
+        time: "11:50:30",
+        customer: "Chukwuemeka Peter Okonkwo",
+        amount: 432100.25,
+        status: "DRAFT",
+      },
+      {
+        invoiceId: "INV-007-2022",
+        dateCreated: "8 Dec, 2022",
+        time: "10:25:15",
+        customer: "Aisha Fatima Ibrahim",
+        amount: 1567890.50,
         status: "PAID",
       },
       {
-        invoiceId: "Fecd7dsa9a57.....",
-        dateCreated: "23 Sept, 2023",
-        time: "18:03:23",
-        customer: "Olaniyi Oluwadare Johnson",
-        amount: 1311750.12,
+        invoiceId: "INV-008-2022",
+        dateCreated: "8 Dec, 2022",
+        time: "09:40:55",
+        customer: "Olufemi David Adeyemi",
+        amount: 2345670.00,
+        status: "UNPAID",
+      },
+      {
+        invoiceId: "INV-009-2022",
+        dateCreated: "8 Dec, 2022",
+        time: "08:55:40",
+        customer: "Ngozi Patricia Nwosu",
+        amount: 876540.80,
         status: "PAID",
       },
       {
-        invoiceId: "Fecd7dsa9a57.....",
-        dateCreated: "23 Sept, 2023",
-        time: "18:03:23",
-        customer: "Olaniyi Oluwadare Johnson",
-        amount: 1311750.12,
-        status: "PAID",
-      },
-      {
-        invoiceId: "Fecd7dsa9a57.....",
-        dateCreated: "23 Sept, 2023",
-        time: "18:03:23",
-        customer: "Olaniyi Oluwadare Johnson",
-        amount: 1311750.12,
-        status: "PAID",
-      },
-      {
-        invoiceId: "Fecd7dsa9a57.....",
-        dateCreated: "23 Sept, 2023",
-        time: "18:03:23",
-        customer: "Olaniyi Oluwadare Johnson",
-        amount: 1311750.12,
-        status: "PAID",
-      },
-      {
-        invoiceId: "Fecd7dsa9a57.....",
-        dateCreated: "23 Sept, 2023",
-        time: "18:03:23",
-        customer: "Olaniyi Oluwadare Johnson",
-        amount: 1311750.12,
-        status: "PAID",
+        invoiceId: "INV-010-2022",
+        dateCreated: "8 Dec, 2022",
+        time: "08:10:20",
+        customer: "Yusuf Mohammed Bello",
+        amount: 1234567.90,
+        status: "PENDING PAYMENT",
       },
     ],
+  },
+];
+
+export const invoiceRemindersData: InvoiceReminder[] = [
+  {
+    id: "reminder-14",
+    text: "14 days before due date",
+    daysBeforeDue: 14,
+    completed: true,
+  },
+  {
+    id: "reminder-7",
+    text: "7 days before due date",
+    daysBeforeDue: 7,
+    completed: true,
+  },
+  {
+    id: "reminder-3",
+    text: "3 days before due date",
+    daysBeforeDue: 3,
+    completed: false,
+  },
+  {
+    id: "reminder-1",
+    text: "24 hrs before due date",
+    daysBeforeDue: 1,
+    completed: false,
+  },
+  {
+    id: "reminder-0",
+    text: "On the due date",
+    daysBeforeDue: -1,
+    completed: false,
   },
 ];

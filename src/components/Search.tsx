@@ -27,11 +27,13 @@ export default function Search({ placeholder, className }: SearchProps) {
   return (
     <div
       className={cn(
-        "w-full flex flex-row-reverse gap-2 items-center px-[2.4rem] py-[.8rem] self-stretch rounded-[3rem] border border-grey-100",
+        "w-full flex flex-row-reverse gap-2 h-full items-center px-[2.4rem] py-[.8rem] self-stretch rounded-[3rem] border border-grey-100",
         className
       )}
     >
-      <SearchIcon />
+      <span className="shrink-0">
+        <SearchIcon />
+      </span>
       <input
         type="search"
         value={text}

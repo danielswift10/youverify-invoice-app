@@ -26,12 +26,14 @@ export default function DashboardHeader({ title }: { title: string }) {
       <Helmet>
         <title>{title} | Youverify</title>
       </Helmet>
-      <div className="flex bg-background items-center justify-between h-[10rem] fixed w-[78%] border-b border-b-primary-300">
-        <h2 className="font-medium text-[2.8rem] text-grey-600 uppercase tracking-wide">
+      <div
+        className="sticky top-0 w-full z-30 bg-background flex items-center justify-between h-[10rem] border-b border-b-primary-300"
+      >
+        <h2 className="font-semibold text-[2rem] md:text-[2.8rem] text-grey-600 uppercase tracking-wide">
           {title}
         </h2>
-        <div className="flex items-center gap-[2.4rem]">
-          <button className="flex items-center justify-center rounded-full bg-white p-8">
+        <div className="flex items-center gap-[1rem] md:gap-[2.4rem]">
+          <button className="flex items-center justify-center rounded-full bg-white p-6">
             <BellIcon />
           </button>
 
