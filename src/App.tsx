@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import { SignIn, SignUp } from "./(auth)";
+import { SignIn, SignUp } from "./pages/auth";
 import { routesData } from "./utils/data";
-import DashboardLayout from "./(dashboard)/layout";
 import ProtectedRoute from "./components/ProtectedRoute";
 import PublicRoute from "./components/PublicRoute";
+import DashboardLayout from "./pages/dashboard/components/DashboardLayout";
 
 export default function App() {
   return (

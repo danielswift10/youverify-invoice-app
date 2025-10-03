@@ -39,7 +39,8 @@ function Button({
 
   const sizes = {
     small: "text-[1.4rem] font-semibold leading-3 py-2 px-4 ",
-    medium: "text-[1.6rem] font-semibold px-0 py-7 tracking-widest md:px-[6.2rem] md:py-[2.4rem]",
+    medium:
+      "text-[1.6rem] font-semibold px-0 py-7 tracking-widest md:px-[6.2rem] md:py-[2.4rem]",
   };
 
   if (href)

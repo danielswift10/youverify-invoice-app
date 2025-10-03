@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { onAuthStateChanged, signOut, type User } from "firebase/auth";
-import { auth, db } from "../(auth)/store/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { auth, db } from "../pages/auth/store/firebase";
 
 interface UserData {
   firstName: string;

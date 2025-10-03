@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import type { ISignUp } from "../(auth)/types";
-import { auth, db } from "../(auth)/store/firebase";
+import type { ISignUp } from "../pages/auth/types";
+import { auth, db } from "../pages/auth/store/firebase";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { doc, setDoc } from "firebase/firestore";

@@ -1,7 +1,7 @@
 import type { ClassValue } from "clsx";
 import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
-import type { Invoices } from "../(dashboard)/invoice/types";
+import type { Invoices } from "../pages/dashboard/invoice/types";
 
 export function cn(...args: ClassValue[]) {
   return twMerge(clsx(args));
@@ -24,6 +24,7 @@ export const statusPill: Record<Invoices["status"], string> = {
   DRAFT: "bg-grey-50 border-grey-800 text-grey-600",
   UNPAID: "bg-success-50 border-success-200 text-success-300",
   "PENDING PAYMENT": "bg-warning-50 border-warning-300 text-warning-200",
+  "PARTIAL PAYMENT": "bg-primary-50 border-primary-300 text-primary-100",
 };
 
 export const getStatusPillClasses = (status: Invoices["status"]): string => {

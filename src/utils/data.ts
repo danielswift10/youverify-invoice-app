@@ -1,11 +1,11 @@
-import GettingStarted from "../(dashboard)/getting-started/GettingStarted";
-import Overview from "../(dashboard)/overview/Overview";
-import Accounts from "../(dashboard)/accounts/Accounts";
-import Invoice from "../(dashboard)/invoice/Invoice";
-import BeneficiaryManagement from "../(dashboard)/beneficiary-management/BeneficiaryManagement";
-import HelpCenter from "../(dashboard)/help-center/HelpCenter";
-import Settings from "../(dashboard)/settings/Settings";
-import type { ISideBarData } from "../(dashboard)/types";
+import GettingStarted from "../pages/dashboard/getting-started/GettingStarted";
+import Overview from "../pages/dashboard/overview/Overview";
+import Accounts from "../pages/dashboard/accounts/Accounts";
+import Invoice from "../pages/dashboard/invoice/Invoice";
+import BeneficiaryManagement from "../pages/dashboard/beneficiary-management/BeneficiaryManagement";
+import HelpCenter from "../pages/dashboard/help-center/HelpCenter";
+import Settings from "../pages/dashboard/settings/Settings";
+import type { ISideBarData } from "../pages/dashboard/types";
 import HomeIcon from "../assets/icons/HomeIcon";
 import CategoryIcon from "../assets/icons/CategoryIcon";
 import ReceiptItemIcon from "../assets/icons/ReceiptItemIcon";
@@ -18,9 +18,9 @@ import type {
   InvoiceGroup,
   InvoiceItem,
   InvoiceReminder,
-} from "../(dashboard)/invoice/types";
-import AllInovices from "../(dashboard)/invoice/all-invoices/AllInovices";
-import InvoiceInterface from "../(dashboard)/invoice/components/InvoiceInterface";
+} from "../pages/dashboard/invoice/types";
+import AllInovices from "../pages/dashboard/invoice/all-invoices/AllInovices";
+import InvoiceInterface from "../pages/dashboard/invoice/components/InvoiceInterface";
 
 interface IRoutes {
   path: string;
@@ -107,7 +107,6 @@ export const sidebarItemsData: ISideBarData[] = [
   },
 ];
 
-// Invoice
 export const invoiceOverviewStatsData: IInvoiceOverviewCard[] = [
   {
     title: "Total Paid",
@@ -149,7 +148,7 @@ export const recentInvoicesData: InvoiceGroup[] = [
         id: "1023494 - 2304",
         dueDate: "May 19th, 2023",
         amount: 1311750.12,
-        status: "OVERDUE",
+        status: "PARTIAL PAYMENT",
       },
     ],
   },
@@ -209,13 +208,6 @@ export const recentInvoiceActivitiesData: InvoiceActivities[] = [
   },
 ];
 
-// export const invoiceRemindersData: InvoiceReminders[] = [
-//   { text: "14 days before due date", completed: true },
-//   { text: "7 days before due date", completed: true },
-//   { text: "3 days before due date", completed: false },
-//   { text: "24 hrs before due date", completed: false },
-//   { text: "On the due date", completed: false },
-// ];
 
 export const invoiceItemsData: InvoiceItem[] = [
   {
@@ -283,7 +275,6 @@ export const invoiceActivityData: InvoiceActivities[] = [
   },
 ];
 
-
 export const allInvoicesData: InvoiceGroup[] = [
   {
     date: "TODAY - 27TH MARCH, 2023",
@@ -301,7 +292,7 @@ export const allInvoicesData: InvoiceGroup[] = [
         dateCreated: "23 Sept, 2023",
         time: "17:45:10",
         customer: "Adebayo Michael Thompson",
-        amount: 856420.50,
+        amount: 856420.5,
         status: "PENDING PAYMENT",
       },
       {
@@ -309,7 +300,7 @@ export const allInvoicesData: InvoiceGroup[] = [
         dateCreated: "23 Sept, 2023",
         time: "16:20:05",
         customer: "Chidinma Grace Okafor",
-        amount: 2145600.00,
+        amount: 2145600.0,
         status: "PAID",
       },
     ],
@@ -330,7 +321,7 @@ export const allInvoicesData: InvoiceGroup[] = [
         dateCreated: "8 Dec, 2022",
         time: "13:15:22",
         customer: "Funmilayo Janet Ajayi",
-        amount: 1987500.00,
+        amount: 1987500.0,
         status: "PAID",
       },
       {
@@ -346,7 +337,7 @@ export const allInvoicesData: InvoiceGroup[] = [
         dateCreated: "8 Dec, 2022",
         time: "10:25:15",
         customer: "Aisha Fatima Ibrahim",
-        amount: 1567890.50,
+        amount: 1567890.5,
         status: "PAID",
       },
       {
@@ -354,7 +345,7 @@ export const allInvoicesData: InvoiceGroup[] = [
         dateCreated: "8 Dec, 2022",
         time: "09:40:55",
         customer: "Olufemi David Adeyemi",
-        amount: 2345670.00,
+        amount: 2345670.0,
         status: "UNPAID",
       },
       {
@@ -362,7 +353,7 @@ export const allInvoicesData: InvoiceGroup[] = [
         dateCreated: "8 Dec, 2022",
         time: "08:55:40",
         customer: "Ngozi Patricia Nwosu",
-        amount: 876540.80,
+        amount: 876540.8,
         status: "PAID",
       },
       {
@@ -370,7 +361,7 @@ export const allInvoicesData: InvoiceGroup[] = [
         dateCreated: "8 Dec, 2022",
         time: "08:10:20",
         customer: "Yusuf Mohammed Bello",
-        amount: 1234567.90,
+        amount: 1234567.9,
         status: "PENDING PAYMENT",
       },
     ],

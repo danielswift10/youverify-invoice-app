@@ -5,11 +5,11 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
 } from "firebase/auth";
-import { auth, db } from "../(auth)/store/firebase";
+import { auth, db } from "../pages/auth/store/firebase";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { doc, setDoc, getDoc } from "firebase/firestore";
-import type { ISignIn } from "../(auth)/types";
+import type { ISignIn } from "../pages/auth/types";
 
 interface IUseSignIn {
   signInUser: (data: ISignIn) => Promise<void>;

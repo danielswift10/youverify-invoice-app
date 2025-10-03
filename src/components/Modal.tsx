@@ -39,7 +39,7 @@ export default function Modal({ className, children, isOpen }: ModalProps) {
         <div className="w-full flex justify-end">
           <button
             onClick={() => setModalType("CLOSE_MODAL")}
-            className="w-12 lg:w-24 h-12 md:h-24 bg-white rounded-full flex items-center justify-center"
+            className="w-12 md:w-24 h-12 md:h-24 bg-white rounded-full flex items-center justify-center"
           >
             <CloseIcon />
           </button>

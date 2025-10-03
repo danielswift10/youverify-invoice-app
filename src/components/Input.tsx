@@ -43,7 +43,7 @@ export default function Input({
   };
 
   return (
-    <div className="w-full flex flex-col gap-6">
+    <div className="w-full flex flex-col gap-5">
       {label && (
         <label htmlFor={name} className="font-medium tracking-wider text-black leading-3">
           {label}
