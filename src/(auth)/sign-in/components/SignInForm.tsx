@@ -12,7 +12,7 @@ export default function SignInForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isDirty, isValid },
     reset,
   } = useForm<ISignIn>();
 
@@ -39,7 +39,9 @@ export default function SignInForm() {
     <div className="flex flex-col gap-[3rem] w-[44rem]">
       <hgroup>
         <h1 className="text-[3rem] tracking-wide font-semibold">Sign In</h1>
-        <p className="tracking-wider">Welcome back! Please enter your details.</p>
+        <p className="tracking-wider">
+          Welcome back! Please enter your details.
+        </p>
       </hgroup>
       <form className="space-y-[2rem]" onSubmit={handleSubmit(onSubmit)}>
         <Input
@@ -71,7 +73,11 @@ export default function SignInForm() {
           disabled={isLoading}
           errors={errors?.password}
         />
-        <Button type="submit" className="py-[1.6rem]">
+        <Button
+          type="submit"
+          disabled={!isDirty || !isValid || isSigningIn}
+          className="py-[1.6rem]"
+        >
           {isSigningIn ? <SpinnerIcon /> : "Sign In"}
         </Button>
 

@@ -10,7 +10,7 @@ export default function SignUpForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isDirty, isValid },
     reset,
   } = useForm<ISignUp>();
 
@@ -101,7 +101,7 @@ export default function SignUpForm() {
           <Button
             type="submit"
             className="py-[1.6rem]"
-            disabled={registeringUser}
+            disabled={registeringUser || !isDirty || !isValid}
           >
             {registeringUser ? <SpinnerIcon /> : "Sign Up"}
           </Button>
